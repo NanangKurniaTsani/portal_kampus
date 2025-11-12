@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-xl border border-gray-200;
+  }
+  
+  .eco-gradient {
+    @apply bg-gradient-to-br from-eco-primary to-eco-secondary;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-eco-light to-eco-accent/30;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .card-hover:hover {
+    @apply transform -translate-y-2 shadow-2xl;
+  }
+  
+  .btn-primary {
+    @apply bg-eco-primary text-white font-medium px-6 py-3 rounded-xl hover:bg-eco-secondary transition-all duration-300 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply border border-eco-primary text-eco-primary font-medium px-6 py-3 rounded-xl hover:bg-eco-primary hover:text-white transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply font-medium text-eco-dark hover:text-eco-primary transition-all duration-300;
+  }
+
+  .nav-link.active {
+    @apply text-eco-primary font-semibold bg-eco-light/50;
+  }
+
+  .nav-link-mobile {
+    @apply font-medium text-eco-dark hover:text-eco-primary hover:bg-eco-light/50 transition-all duration-300;
+  }
+
+  .nav-link-mobile.active {
+    @apply text-eco-primary font-semibold bg-eco-light/50;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-eco-primary to-eco-secondary bg-clip-text text-transparent;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
